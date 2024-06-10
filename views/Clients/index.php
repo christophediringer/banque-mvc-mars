@@ -1,4 +1,5 @@
 
+<button onclick="redirectToCreateClient()">Ajouter un client</button>
 <table>
     <thead>
         <th>ID</th>
@@ -24,3 +25,10 @@
 
     </tbody>
 </table>
+
+<script tye="text/javascript">
+    function redirectToCreateClient(){
+        window.location.replace("../Controllers/ClientController.php?action=create");
+    }
+    </script>
+    

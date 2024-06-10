@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Models/BDD.php';
+require_once 'BDD.php';
 
 
 function fetchClients() {
@@ -13,3 +13,10 @@ function fetchClients() {
         $request->execute();
         return $request->fetchAll(PDO::FETCH_ASSOC);
 };
+
+function insertClient($nom,$prenom, $mail, $telephone){
+    $bdd = new BDD();
+    $conn = $bdd->connect();
+    $request = $conn->prepare('INSERT INTO clients (Nom, Prenom, Mail, Tel) VALUE (?,?,?,?);');
+    $request->execute([$nom,$prenom, $mail, $telephone]);
+}

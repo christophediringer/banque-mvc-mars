@@ -1,11 +1,14 @@
-<button onclick="redirectToclient()>Clients</button
-<button>Comptes</button
+<button onclick="redirectToClients()">Clients</button>
+<button onclick="redirectToComptes()">Comptes</button>
 
-// function pour rediriger vers le fichier ClientController
-<script type="text/javascript"></script>
+<script type="text/javascript">
     function redirectToClients(){
-        // direction vers un autre url
-        window.location.replace('/clientController.php');
+        
+        window.location.replace('./Controllers/ClientController.php');
+    }
+
+    function redirectToComptes (){
+        window.location.replace('./Controllers/CompteController.php');  
     }
 
 </script>
