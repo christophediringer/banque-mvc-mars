@@ -8,6 +8,7 @@
         <th>Numero Compte</th>
         <th>Solde</th>
         <th>numero client</th>
+        <th>Actions</th>
         
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
                     echo "<td>". $compte["NumeroCompte"] ."</td>";
                     echo "<td>". $compte["Solde"] ."</td>";
                     echo "<td>". $compte["FK_client"] ."</td>";
+                    echo "<td> <button onclick='redirectToDetailsCompte(". $compte['ID'].")'> Voir Compte </button></td>";
                     
                 echo "</tr>";
             }
@@ -32,5 +34,8 @@
 <script tye="text/javascript">
     function redirectToCreateCompte(){
         window.location.replace("../Controllers/CompteController.php?action=create");
+    }
+    function redirectToDetailsCompte(id){
+        window.location.replace("../Controllers/CompteController.php?action=details&id=" + id)
     }
     </script>
